@@ -1,15 +1,9 @@
 .main {
   display: flex;
 
-  &__aside {
-    max-width: 335px;
-    width: 100%;
-    background-color: aqua;
-  }
-
   &__content {
-    box-sizing: border-box;
     width: 100%;
-    background-color: aquamarine;
+    margin: 78px 0 0 335px;
+    background-color: #d43737;
   }
 }
