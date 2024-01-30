@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  padding: 20px 45px;
+  border-bottom: 1px solid var(--border-color);
+
+  &__logo {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 115px 0 70px;
+    border-right: 1px solid var(--border-color);
+  }
+
+  &__main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__control {
+    max-width: 260px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__control:first-child {
+    margin-left: 29px;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 30px;
+    border-right: 1px solid var(--border-color);
+    color: var(--text-lighten-color);
+  }
+
+  &__exit {
+    margin-left: 30px;
+    color: var(--text-lighten-color);
+    font-family: inherit;
+  }
+}
