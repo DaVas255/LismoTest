@@ -1,13 +1,15 @@
 html,
 body {
-  width: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 ol,
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -25,4 +27,14 @@ button {
 
 textarea {
   resize: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
 }

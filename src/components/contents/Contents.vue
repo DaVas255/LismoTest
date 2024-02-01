@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import style from './Contents.module.scss'
+import Subject from '../subject/Subject.vue'
 
 const disabled = ref(false)
 function warnDisabled() {
@@ -17,6 +18,10 @@ function warnDisabled() {
       <img src="/src/assets/svg/keyboard_arrow_bottom.svg" alt="arrow right" v-if="disabled" />
     </div>
 
-    <div v-if="disabled">This feature is disabled!</div>
+    <div :class="style.contents__list" v-if="disabled">
+      <Subject> Тема 1. Основы технологии производства ЭС </Subject>
+      <Subject> Тема 2. Моделирование бизнес-процессов предметной области </Subject>
+      <Subject> Тема 3. Модели разработки программного продукта </Subject>
+    </div>
   </div>
 </template>

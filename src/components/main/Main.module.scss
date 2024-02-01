@@ -1,9 +1,168 @@
 .main {
-  display: flex;
+  margin: 78px 0 0 335px;
+
+  &__background {
+    height: 449px;
+    background-image: url(/src/assets/background/main-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__wrapper {
+    position: relative;
+    top: -270px;
+    padding: 30px;
+
+    border-radius: 24px 24px 0px 0px;
+    background-color: var(--app-background);
+    box-shadow: 0px 0px 30px 0px rgba(70, 73, 94, 0.2);
+  }
 
   &__content {
+    margin: 0 auto;
+    max-width: 1040px;
     width: 100%;
-    margin: 78px 0 0 335px;
-    background-color: #d43737;
+  }
+
+  &__header {
+    position: relative;
+    top: -100px;
+
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 30px -10px rgba(70, 73, 94, 0.15);
+  }
+
+  &__description {
+    display: flex;
+    padding: 36px 40px 20px 40px;
+    border-bottom: 1px solid #dadde5;
+  }
+
+  &__info {
+    margin-right: 40px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__courseDescr {
+    line-height: 20px;
+  }
+
+  &__teachers {
+    display: flex;
+    align-items: center;
+    padding: 25px 40px;
+  }
+
+  &__teacherTitle {
+    margin-right: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__listTeachers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__listTeacher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--text-lighten-color);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: -80px;
+    margin-bottom: 25px;
+    padding: 30px 50px;
+
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 0px 30px -10px rgba(70, 73, 94, 0.15);
+
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.72px;
+  }
+
+  &__commonProgress {
+    margin-right: 10px;
+    height: 10px;
+    width: 90%;
+    border-radius: 20px;
+    background: rgba(162, 172, 190, 0.2);
+  }
+
+  &__currentProgress {
+    width: 70%;
+    height: 100%;
+    border-radius: 20px;
+    background: #3c388d;
+  }
+
+  &__common {
+    padding: 30px 50px 30px 74px;
+
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 0px 40px 0px rgba(29, 38, 122, 0.05);
+  }
+
+  &__commonTitle {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    :first-child {
+      margin-left: -38px;
+      margin-right: 14px;
+    }
+
+    :last-child {
+      margin-left: auto;
+    }
+  }
+
+  &__commonTitleName {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+
+  &__commonCollapse {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  &__commonContent {
+    margin-top: 43px;
+  }
+
+  &__commonSubtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
   }
 }

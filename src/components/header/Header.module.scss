@@ -8,10 +8,10 @@
   display: flex;
   padding: 20px 45px;
   border-bottom: 1px solid var(--border-color);
+  background-color: #fff;
 
   &__logo {
     box-sizing: border-box;
-    margin: 0 auto;
     padding: 0 115px 0 70px;
     border-right: 1px solid var(--border-color);
   }

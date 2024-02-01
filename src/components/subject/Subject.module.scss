@@ -1,0 +1,22 @@
+.subject {
+  width: 335px;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 20px 30px 15px 74px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: #eef3fa;
+  }
+
+  &__title {
+    display: flex;
+    align-items: start;
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 155%;
+  }
+}
