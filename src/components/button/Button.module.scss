@@ -1,12 +1,38 @@
 .button {
-  width: 100%;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   padding: 13px 27.5px;
 
   border: 1px solid var(--border-color);
   border-radius: 6px;
 
+  font-family: 'Montserrat';
+  font-weight: 400;
   font-size: 15px;
+  line-height: 18.29px;
+  color: var(--text-color);
+}
+
+.mark {
+  box-sizing: border-box;
+  padding: 7px 15px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+
+  color: var(--element-disabled-2-color);
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21.7px;
+
+  &_done {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #0e8345;
+    border: 1px solid #acd9c1;
+  }
 }

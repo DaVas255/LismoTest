@@ -2,9 +2,10 @@
 import { ref } from 'vue'
 
 import style from './Main.module.scss'
-import Button from '/src/components/button/Button.vue'
+import Task from '/src/components/task/Task.vue'
+import Footer from '@/components/footer/Footer.vue'
 
-const disabled = ref(false)
+const disabled = ref(true)
 function warnDisabled() {
   disabled.value = !disabled.value
 }
@@ -65,29 +66,133 @@ function warnDisabled() {
         </section>
 
         <section :class="style.main__common">
-          <div :class="style.main__commonTitle" @click="warnDisabled">
-            <img
-              src="/src/assets/svg/keyboard_arrow_right.svg"
-              alt="arrow right"
-              v-if="!disabled"
-            />
-            <img
-              src="/src/assets/svg/keyboard_arrow_bottom.svg"
-              alt="arrow right"
-              v-if="disabled"
-            />
-            <h3 :class="style.main__commonTitleName">Общее</h3>
-            <span :class="style.main__commonCollapse">Свернуть всё</span>
+          <div :class="style.main__commonTitle">
+            <div :class="style.main__commonTitleWrapper">
+              <img
+                src="/src/assets/svg/keyboard_arrow_right.svg"
+                alt="arrow right"
+                v-if="!disabled"
+              />
+              <img
+                src="/src/assets/svg/keyboard_arrow_bottom.svg"
+                alt="arrow right"
+                v-if="disabled"
+              />
+              <h3 :class="style.main__commonTitleName">Общее</h3>
+            </div>
+            <span :class="style.main__commonCollapse" @click="warnDisabled">Свернуть всё</span>
           </div>
 
           <div :class="style.main__commonContent" v-if="disabled">
             <h4 :class="style.main__commonSubtitle">Материалы для изучения</h4>
             <ul>
-              <li></li>
+              <li :class="style.main__commonItem">
+                <Task typeIcon="zig" typeTask="mustDone"> Список литературы по модулю </Task>
+              </li>
+
+              <li :class="style.main__commonItem">
+                <Task typeIcon="glossary" typeTask="button"> Глоссарий </Task>
+              </li>
+
+              <li :class="style.main__commonItem">
+                <Task typeIcon="exercise" typeTask="mustDoneSecond"> Задание </Task>
+              </li>
+
+              <li :class="style.main__commonItem">
+                <Task typeIcon="folder" typeTask="button" block> Список литературы по модулю </Task>
+              </li>
+
+              <li>
+                <Task typeIcon="file" typeTask="button"> Список литературы по модулю </Task>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section :class="style.main__common">
+          <div :class="style.main__commonTitle">
+            <div :class="style.main__commonTitleWrapper">
+              <img
+                src="/src/assets/svg/keyboard_arrow_right.svg"
+                alt="arrow right"
+                v-if="!disabled"
+              />
+              <img
+                src="/src/assets/svg/keyboard_arrow_bottom.svg"
+                alt="arrow right"
+                v-if="disabled"
+              />
+              <h3 :class="style.main__commonTitleName">
+                Модуль 1. Объекты интеллектуальной собственности. Интеллектуальные права. Правовая
+                охрана объектов интеллектуальной собственности
+              </h3>
+            </div>
+          </div>
+
+          <div :class="style.main__commonContent" v-if="disabled">
+            <h4 :class="style.main__commonSubtitle">Материалы для изучения</h4>
+            <ul>
+              <li :class="style.main__commonItem">
+                <Task typeIcon="zig" typeTask="mustDone"> Список литературы по модулю </Task>
+              </li>
+
+              <li :class="style.main__commonItem">
+                <Task typeIcon="glossary" typeTask="button"> Глоссарий </Task>
+              </li>
+
+              <li :class="style.main__commonItem">
+                <Task typeIcon="exercise" typeTask="mustDoneSecond"> Задание </Task>
+              </li>
+
+              <li :class="style.main__commonItem">
+                <Task typeIcon="folder" typeTask="button" block> Список литературы по модулю </Task>
+              </li>
+
+              <li>
+                <Task typeIcon="file" typeTask="button"> Список литературы по модулю </Task>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section :class="style.main__common">
+          <div :class="style.main__commonTitle">
+            <div :class="style.main__commonTitleWrapper">
+              <img
+                src="/src/assets/svg/keyboard_arrow_right.svg"
+                alt="arrow right"
+                v-if="!disabled"
+              />
+              <img
+                src="/src/assets/svg/keyboard_arrow_bottom.svg"
+                alt="arrow right"
+                v-if="disabled"
+              />
+              <h3 :class="style.main__commonTitleName">
+                Модуль 2. Объекты интеллектуальной собственности. Интеллектуальные права.
+              </h3>
+            </div>
+          </div>
+
+          <div :class="style.main__commonContent" v-if="disabled">
+            <h4 :class="style.main__commonSubtitle">Материалы для изучения</h4>
+            <ul>
+              <li :class="style.main__commonItem">
+                <Task typeIcon="zig" typeTask="mustDone"> Список литературы по модулю </Task>
+              </li>
+
+              <li :class="style.main__commonItem">
+                <Task typeIcon="file" typeTask="button"> Список литературы по модулю </Task>
+              </li>
+
+              <li :class="style.main__commonItem">
+                <Task typeIcon="file" typeTask="button" block> Список литературы по модулю </Task>
+              </li>
             </ul>
           </div>
         </section>
       </div>
     </div>
   </main>
+  <Footer />
 </template>
