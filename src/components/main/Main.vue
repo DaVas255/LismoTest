@@ -4,8 +4,9 @@ import { ref } from 'vue'
 import style from './Main.module.scss'
 import Task from '/src/components/task/Task.vue'
 import Footer from '@/components/footer/Footer.vue'
+import Collapsible from '@/components/collapsible/Collapsible.vue'
 
-const disabled = ref(true)
+const disabled = ref(false)
 function warnDisabled() {
   disabled.value = !disabled.value
 }
@@ -27,14 +28,14 @@ function warnDisabled() {
                 финансовом планировании, в том числе для ведения междисциплинарных проектов в сфере
                 медицины, экономики и инженерных технологий.
               </p>
-              <p>
+              <p :class="style.main__courseDescr">
                 На курсе рассматриваются современные представления об экономике здравоохранения и
                 финансовом планировании, в том числе для ведения междисциплинарных проектов в сфере
                 медицины, экономики и инженерных технологий.
               </p>
             </div>
 
-            <div>
+            <div :class="style.main__image">
               <img src="/src/assets/png/rec.png" alt="medicine" />
             </div>
           </div>
@@ -65,25 +66,8 @@ function warnDisabled() {
           71%
         </section>
 
-        <section :class="style.main__common">
-          <div :class="style.main__commonTitle">
-            <div :class="style.main__commonTitleWrapper">
-              <img
-                src="/src/assets/svg/keyboard_arrow_right.svg"
-                alt="arrow right"
-                v-if="!disabled"
-              />
-              <img
-                src="/src/assets/svg/keyboard_arrow_bottom.svg"
-                alt="arrow right"
-                v-if="disabled"
-              />
-              <h3 :class="style.main__commonTitleName">Общее</h3>
-            </div>
-            <span :class="style.main__commonCollapse" @click="warnDisabled">Свернуть всё</span>
-          </div>
-
-          <div :class="style.main__commonContent" v-if="disabled">
+        <Collapsible label="Общее" closeAll>
+          <div :class="style.main__commonContent">
             <h4 :class="style.main__commonSubtitle">Материалы для изучения</h4>
             <ul>
               <li :class="style.main__commonItem">
@@ -107,29 +91,13 @@ function warnDisabled() {
               </li>
             </ul>
           </div>
-        </section>
+        </Collapsible>
 
-        <section :class="style.main__common">
-          <div :class="style.main__commonTitle">
-            <div :class="style.main__commonTitleWrapper">
-              <img
-                src="/src/assets/svg/keyboard_arrow_right.svg"
-                alt="arrow right"
-                v-if="!disabled"
-              />
-              <img
-                src="/src/assets/svg/keyboard_arrow_bottom.svg"
-                alt="arrow right"
-                v-if="disabled"
-              />
-              <h3 :class="style.main__commonTitleName">
-                Модуль 1. Объекты интеллектуальной собственности. Интеллектуальные права. Правовая
-                охрана объектов интеллектуальной собственности
-              </h3>
-            </div>
-          </div>
-
-          <div :class="style.main__commonContent" v-if="disabled">
+        <Collapsible
+          label="Модуль 1. Объекты интеллектуальной собственности. Интеллектуальные права. Правовая
+                охрана объектов интеллектуальной собственности"
+        >
+          <div :class="style.main__commonContent" v-if="!disabled">
             <h4 :class="style.main__commonSubtitle">Материалы для изучения</h4>
             <ul>
               <li :class="style.main__commonItem">
@@ -153,28 +121,12 @@ function warnDisabled() {
               </li>
             </ul>
           </div>
-        </section>
+        </Collapsible>
 
-        <section :class="style.main__common">
-          <div :class="style.main__commonTitle">
-            <div :class="style.main__commonTitleWrapper">
-              <img
-                src="/src/assets/svg/keyboard_arrow_right.svg"
-                alt="arrow right"
-                v-if="!disabled"
-              />
-              <img
-                src="/src/assets/svg/keyboard_arrow_bottom.svg"
-                alt="arrow right"
-                v-if="disabled"
-              />
-              <h3 :class="style.main__commonTitleName">
-                Модуль 2. Объекты интеллектуальной собственности. Интеллектуальные права.
-              </h3>
-            </div>
-          </div>
-
-          <div :class="style.main__commonContent" v-if="disabled">
+        <Collapsible
+          label="Модуль 2. Объекты интеллектуальной собственности. Интеллектуальные права."
+        >
+          <div :class="style.main__commonContent">
             <h4 :class="style.main__commonSubtitle">Материалы для изучения</h4>
             <ul>
               <li :class="style.main__commonItem">
@@ -190,7 +142,7 @@ function warnDisabled() {
               </li>
             </ul>
           </div>
-        </section>
+        </Collapsible>
       </div>
     </div>
   </main>

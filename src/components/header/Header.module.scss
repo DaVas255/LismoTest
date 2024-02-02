@@ -10,10 +10,34 @@
   border-bottom: 1px solid var(--border-color);
   background-color: #fff;
 
+  @media screen and (max-width: 740px) {
+    padding: 20px 15px;
+  }
+
+  @media screen and (max-width: 350px) {
+    padding: 20px 7px;
+  }
+
   &__logo {
     box-sizing: border-box;
     padding: 0 115px 0 70px;
     border-right: 1px solid var(--border-color);
+
+    @media screen and (max-width: 1020px) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @media screen and (max-width: 1020px) {
+      display: block;
+      min-width: 24px;
+      max-width: 24px;
+      height: 24px;
+      padding: 3px;
+    }
   }
 
   &__main {
@@ -27,10 +51,30 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    &:first-child {
+      margin-left: 29px;
+
+      @media screen and (max-width: 740px) {
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (max-width: 740px) {
+      justify-content: initial;
+      gap: 15%;
+    }
+
+    @media screen and (max-width: 480px) {
+      gap: 8%;
+    }
   }
 
-  &__control:first-child {
-    margin-left: 29px;
+  &__notification {
+    @media screen and (max-width: 350px) {
+      height: 25px;
+      width: 25px;
+    }
   }
 
   &__profile {
@@ -45,11 +89,34 @@
     padding: 0 30px;
     border-right: 1px solid var(--border-color);
     color: var(--text-lighten-color);
+
+    @media screen and (max-width: 740px) {
+      font-size: 10px;
+      padding: 0 15px;
+      font-weight: 500;
+    }
+
+    @media screen and (max-width: 350px) {
+      font-size: 8px;
+    }
+  }
+
+  &__avatar {
+    @media screen and (max-width: 350px) {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   &__exit {
     margin-left: 30px;
     color: var(--text-lighten-color);
     font-family: inherit;
+
+    @media screen and (max-width: 740px) {
+      margin-left: 10px;
+      font-size: 10px;
+      font-weight: 500;
+    }
   }
 }
